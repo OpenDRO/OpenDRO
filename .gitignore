@@ -43,4 +43,4 @@ eagle.epf
 *.lck
 
 Thumbs.db
-
+.DS_Store
