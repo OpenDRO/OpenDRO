@@ -1,4 +1,4 @@
-# Design for TouchDRO interface
+# Design for TouchDRO interface (rev 2)
 
 ## Bill of Materials
 
