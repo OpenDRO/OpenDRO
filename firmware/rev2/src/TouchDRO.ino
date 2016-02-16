@@ -1,45 +1,43 @@
 /* Touch DRO
  *
- * Based on:
- * http://www.pjrc.com/teensy/td_libs_Encoder.html
- * http://www.pjrc.com/teensy/td_libs_FreqMeasure.html
+ * rev 2
  *
-
  */
 
 #include <Encoder.h>
 #include <Metro.h>
-#include <FreqMeasure.h>
-#include <Bounce.h>
+#include <FreqMeasureMulti.h>
+#include <Button.h>
 #include <EEPROM.h>
 
-// Frequency measure reserved pins
-// For Teensy 3.x  3 & 4
-// For Teensy LC  16 & 17
+#define ZEROSET_PIN 5
 
-#DEFINE ZSET_PIN 5
+#define TACH_PIN 6
 
-#DEFINE X_A_PIN 11
-#DEFINE X_B_PIN 12
-#DEFINE Y_A_PIN 14
-#DEFINE Y_B_PIN 15
-#DEFINE Z_A_PIN 22
-#DEFINE Z_B_PIN 23
+#define X_A_PIN 11
+#define X_B_PIN 12
+#define Y_A_PIN 14
+#define Y_B_PIN 15
+#define Z_A_PIN 22
+#define Z_B_PIN 23
 
-#DEFINE BT_KEY 2
+#define BT_KEY 2
 
-#DEFINE DEVICE_NAME "TouchDRO"
+#define PULLUP true
+#define INVERT true
 
 // Set up three variables for receiving encoder information
 Encoder encoderX(X_A_PIN, X_B_PIN);
 Encoder encoderY(Y_A_PIN, Y_B_PIN);
 Encoder encoderZ(Z_A_PIN, Z_B_PIN);
 
+FreqMeasureMulti tach;
+
 // Periodic 'interrupt' in order to keep TouchDRO connection active
 Metro keepAlive = Metro(100);
 
-// Zero button (optional)
-Bounce zerobutton = Bounce(ZSET_PIN, 10);
+// Zero button
+Button zeroset = Button(ZEROSET_PIN, PULLUP, INVERT, 10);
 
 void setup() {
   // initialize the console output
@@ -54,15 +52,12 @@ void setup() {
   delay(250);
   digitalWrite(BT_KEY, HIGH);
   delay(250);
-  Serial1.print("AT+NAME"+DEVICE_NAME);
+  Serial1.print("AT+NAMETouchDRO");
   delay(250);
   digitalWrite(BT_KEY, LOW);
 
   // initialize the frequency library (tach)
-  FreqMeasure.begin();
-
-  // initialize the zero-set input
-  pinMode(ZSET_PIN, INPUT_PULLUP);
+  tach.begin(TACH_PIN);
 }
 
 
@@ -78,25 +73,25 @@ float frequency = 0;
 
 void loop() {
 
-   if (FreqMeasure.available()) {
+   zeroset.read();
+
+   if (tach.available()) {
     // average every 30 frequency samples
-    rpm = rpm + FreqMeasure.read();
+    rpm = rpm + tach.read();
     samples = samples + 1;
     if (samples > 30) {
-      frequency = FreqMeasure.countToFrequency(rpm / samples) * 60;
+      frequency = tach.countToFrequency(rpm / samples) * 60;
       rpm = 0;
       samples = 0;
     }
   }
 
  // zero-set the encoder values
- if (zerobutton.update()) {
-    if (zerobutton.fallingEdge()) {
+if (zeroset.wasPressed()) {
         encoderX.write(0);
         encoderY.write(0);
         encoderZ.write(0);
-    }
- }
+}
 
   // read the current position of the encoders
   long _positionX = encoderX.read();

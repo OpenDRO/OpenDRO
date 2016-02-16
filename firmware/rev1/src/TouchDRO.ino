@@ -1,9 +1,6 @@
 /* Touch DRO
- *
- * Based on:
- * http://www.pjrc.com/teensy/td_libs_Encoder.html
- * http://www.pjrc.com/teensy/td_libs_FreqMeasure.html
- *
+
+ * rev 1
 
  */
 
@@ -27,13 +24,13 @@ Bounce zerobutton = Bounce(18, 10);
 void setup() {
   // initialize the console output
   Serial.begin(9600);
-  
+
   // initialize the bluetooth output
   Serial1.begin(9600);
-  
+
   // initialize the frequency library (tach)
   FreqMeasure.begin();
-  
+
   // initialize the zero-set input
   pinMode(18, INPUT_PULLUP);
 }
@@ -75,33 +72,33 @@ void loop() {
   long _positionX = encoderX.read();
   long _positionY = encoderY.read();
   long _positionZ = encoderZ.read();
-  
+
   // if any of the positions have changed or periodic interupt triggered
   if( (_positionX != positionX) ||
       (_positionY != positionY) ||
       (_positionZ != positionZ) ||
         keepAlive.check() == 1) {
-    
+
         // set new values to current values
         positionX = _positionX;
         positionY = _positionY;
         positionZ = _positionZ;
-         
+
         // send current position to TouchDRO app via bluetooth serial interface
         Serial1.print(F("x")); Serial1.print((long)positionX); Serial1.print(F(";"));
         Serial1.print(F("y")); Serial1.print((long)positionY); Serial1.print(F(";"));
         Serial1.print(F("z")); Serial1.print((long)positionZ); Serial1.print(F(";"));
-        
+
         // uncomment to debug via console
         //Serial.print(F("x")); Serial.print((long)positionX); Serial.print(F(";"));
         //Serial.print(F("y")); Serial.print((long)positionY); Serial.print(F(";"));
 
         // send current tach reading to TouchDRO app via bluetooth serial interface
         Serial1.print(F("t")); Serial1.print((long)frequency); Serial1.print(F(";"));
-           
+
         // reset the periodic interupt
         keepAlive.reset();
-        
-      } 
-    
+
+      }
+
 }
