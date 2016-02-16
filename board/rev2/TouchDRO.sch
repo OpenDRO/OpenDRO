@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.5.0">
+<eagle version="7.3.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -284,11 +284,15 @@ In this library the device names are the same as the pin names of the symbols, t
 <text x="-15.24" y="-1.524" size="0.6096" layer="21" font="vector">GND</text>
 <pad name="VCC" x="-16.51" y="-3.81" drill="0.9" diameter="1.778"/>
 <text x="-15.24" y="-4.064" size="0.6096" layer="21" font="vector">VCC</text>
-<wire x1="-17.78" y1="6.985" x2="-17.78" y2="-6.985" width="0.127" layer="21"/>
-<wire x1="-17.78" y1="-6.985" x2="16.51" y2="-6.985" width="0.127" layer="21"/>
-<wire x1="16.51" y1="-6.985" x2="16.51" y2="6.985" width="0.127" layer="21"/>
-<wire x1="16.51" y1="6.985" x2="-17.78" y2="6.985" width="0.127" layer="21"/>
-<text x="-17.78" y="7.493" size="1.016" layer="25" font="vector" ratio="12">&gt;NAME</text>
+<wire x1="-17.78" y1="7.62" x2="-17.78" y2="-7.62" width="0.127" layer="21"/>
+<wire x1="-17.78" y1="-7.62" x2="16.51" y2="-7.62" width="0.127" layer="21"/>
+<wire x1="16.51" y1="-7.62" x2="16.51" y2="7.62" width="0.127" layer="21"/>
+<wire x1="16.51" y1="7.62" x2="-17.78" y2="7.62" width="0.127" layer="21"/>
+<text x="-17.78" y="8.128" size="1.016" layer="25" font="vector" ratio="12">&gt;NAME</text>
+<pad name="STATE" x="-16.51" y="6.35" drill="0.9" diameter="1.778"/>
+<pad name="KEY" x="-16.51" y="-6.35" drill="0.9" diameter="1.778"/>
+<text x="-15.24" y="-6.604" size="0.6096" layer="21" font="vector">KEY</text>
+<text x="-15.24" y="6.096" size="0.6096" layer="21" font="vector">STATE</text>
 </package>
 <package name="BT_BOARD_FOOTPRINT_STANDING">
 <pad name="RX" x="-3.81" y="3.81" drill="0.9" diameter="1.6764"/>
@@ -301,12 +305,16 @@ In this library the device names are the same as the pin names of the symbols, t
 <text x="-2.286" y="-4.064" size="0.6096" layer="21" font="vector">VCC</text>
 <wire x1="-2.48" y1="-7.985" x2="0.47" y2="-7.985" width="0.127" layer="21"/>
 <wire x1="0.47" y1="7.985" x2="-2.58" y2="7.985" width="0.127" layer="21"/>
-<text x="-5.08" y="5.293" size="0.8128" layer="25" font="vector" ratio="12">&gt;NAME</text>
+<text x="-3.81" y="12.913" size="0.8128" layer="25" font="vector" ratio="12">&gt;NAME</text>
 <wire x1="-5.08" y1="-5.08" x2="-5.08" y2="5.08" width="0.127" layer="21"/>
 <wire x1="-5.08" y1="5.08" x2="-2.54" y2="5.08" width="0.127" layer="21"/>
 <wire x1="-2.54" y1="5.08" x2="-2.54" y2="7.95" width="0.127" layer="21"/>
 <wire x1="-5.08" y1="-5.08" x2="-2.54" y2="-5.08" width="0.127" layer="21"/>
 <wire x1="-2.54" y1="-5.08" x2="-2.54" y2="-7.95" width="0.127" layer="21"/>
+<pad name="KEY" x="-3.81" y="-6.35" drill="0.9" diameter="1.6764"/>
+<pad name="STATE" x="-3.81" y="6.35" drill="0.9" diameter="1.6764"/>
+<text x="-2.286" y="-6.604" size="0.6096" layer="21" font="vector">KEY</text>
+<text x="-2.286" y="6.096" size="0.6096" layer="21" font="vector">STATE</text>
 </package>
 </packages>
 <symbols>
@@ -322,6 +330,8 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="7.62" y1="10.16" x2="-7.62" y2="10.16" width="0.254" layer="94"/>
 <text x="-7.62" y="10.922" size="1.778" layer="95" ratio="15">&gt;NAME</text>
 <text x="-7.62" y="-12.7" size="1.778" layer="96" ratio="15">&gt;VALUE</text>
+<pin name="KEY" x="12.7" y="5.08" length="middle" rot="R180"/>
+<pin name="STATE" x="12.7" y="-5.08" length="middle" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -334,7 +344,9 @@ In this library the device names are the same as the pin names of the symbols, t
 <device name="" package="BT_BOARD_FOOTPRINT">
 <connects>
 <connect gate="J_BT_BOARD" pin="GND" pad="GND"/>
+<connect gate="J_BT_BOARD" pin="KEY" pad="KEY"/>
 <connect gate="J_BT_BOARD" pin="RX" pad="RX"/>
+<connect gate="J_BT_BOARD" pin="STATE" pad="STATE"/>
 <connect gate="J_BT_BOARD" pin="TX" pad="TX"/>
 <connect gate="J_BT_BOARD" pin="VCC" pad="VCC"/>
 </connects>
@@ -345,7 +357,9 @@ In this library the device names are the same as the pin names of the symbols, t
 <device name="STANDING" package="BT_BOARD_FOOTPRINT_STANDING">
 <connects>
 <connect gate="J_BT_BOARD" pin="GND" pad="GND"/>
+<connect gate="J_BT_BOARD" pin="KEY" pad="KEY"/>
 <connect gate="J_BT_BOARD" pin="RX" pad="RX"/>
+<connect gate="J_BT_BOARD" pin="STATE" pad="STATE"/>
 <connect gate="J_BT_BOARD" pin="TX" pad="TX"/>
 <connect gate="J_BT_BOARD" pin="VCC" pad="VCC"/>
 </connects>
@@ -5320,12 +5334,12 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <package name="DS-EXT">
 <description>&lt;b&gt;TINY SWITCH&lt;/b&gt;&lt;p&gt;
 Source: http://www2.produktinfo.conrad.com/datenblaetter/700000-724999/705152-da-01-de-Subminiaturschalter_TL_36YO.pdf</description>
-<wire x1="-3.81" y1="2.54" x2="1.27" y2="2.54" width="0.2032" layer="21"/>
-<wire x1="1.27" y1="2.54" x2="1.27" y2="-2.54" width="0.2032" layer="21"/>
-<wire x1="1.27" y1="-2.54" x2="-3.81" y2="-2.54" width="0.2032" layer="21"/>
-<wire x1="-3.81" y1="-2.54" x2="-3.81" y2="2.54" width="0.2032" layer="21"/>
-<text x="-3.175" y="1.27" size="0.8128" layer="25">&gt;NAME</text>
-<text x="-3.175" y="-1.905" size="0.8128" layer="27">&gt;VALUE</text>
+<wire x1="-3.4925" y1="0.9525" x2="0.9525" y2="0.9525" width="0.127" layer="21"/>
+<wire x1="0.9525" y1="0.9525" x2="0.9525" y2="-0.9525" width="0.127" layer="21"/>
+<wire x1="0.9525" y1="-0.9525" x2="-3.4925" y2="-0.9525" width="0.127" layer="21"/>
+<wire x1="-3.4925" y1="-0.9525" x2="-3.4925" y2="0.9525" width="0.127" layer="21"/>
+<text x="-3.4925" y="1.27" size="0.6096" layer="25">&gt;NAME</text>
+<text x="-3.4925" y="-1.905" size="0.6096" layer="27">&gt;VALUE</text>
 <pad name="P$1" x="-2.54" y="0" drill="0.8"/>
 <pad name="P$2" x="0" y="0" drill="0.8"/>
 </package>
