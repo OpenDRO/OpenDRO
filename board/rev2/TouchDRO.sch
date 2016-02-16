@@ -7141,8 +7141,8 @@ Source: www.kingbright.com</description>
 <instance part="+3V4" gate="G$1" x="111.76" y="10.16" rot="R270"/>
 <instance part="+3V5" gate="G$1" x="18.796" y="44.45" rot="R270"/>
 <instance part="+3V6" gate="G$1" x="15.24" y="78.74" rot="R270"/>
-<instance part="+3V8" gate="G$1" x="16.51" y="-24.13" rot="R270"/>
-<instance part="+3V9" gate="G$1" x="17.78" y="6.35" rot="R270"/>
+<instance part="+3V8" gate="G$1" x="11.43" y="-24.13" rot="R270"/>
+<instance part="+3V9" gate="G$1" x="15.24" y="6.35" rot="R270"/>
 <instance part="C2" gate="G$1" x="-63.5" y="10.16"/>
 <instance part="SUPPLY1" gate="GND" x="-63.5" y="5.08"/>
 <instance part="+3V1" gate="G$1" x="35.814" y="45.72" rot="R90"/>
@@ -7312,8 +7312,8 @@ Source: www.kingbright.com</description>
 <net name="Z_B" class="0">
 <segment>
 <pinref part="Z_AXIS" gate="G$1" pin="P$1"/>
-<wire x1="-7.62" y1="-27.94" x2="17.78" y2="-27.94" width="0.1524" layer="91"/>
-<label x="17.78" y="-27.94" size="1.778" layer="95" xref="yes"/>
+<wire x1="-7.62" y1="-27.94" x2="0" y2="-27.94" width="0.1524" layer="91"/>
+<label x="0" y="-27.94" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <label x="38.1" y="-43.18" size="1.778" layer="95" rot="R180" xref="yes"/>
@@ -7350,8 +7350,8 @@ Source: www.kingbright.com</description>
 <net name="Y_B" class="0">
 <segment>
 <pinref part="Y_AXIS" gate="G$1" pin="P$1"/>
-<wire x1="-7.62" y1="2.54" x2="17.78" y2="2.54" width="0.1524" layer="91"/>
-<label x="17.78" y="2.54" size="1.778" layer="95" xref="yes"/>
+<wire x1="-7.62" y1="2.54" x2="2.54" y2="2.54" width="0.1524" layer="91"/>
+<label x="2.54" y="2.54" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="15/A1/T"/>
@@ -7410,8 +7410,13 @@ Source: www.kingbright.com</description>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="3/CAN-TX/PWM"/>
-<wire x1="55.88" y1="2.54" x2="38.1" y2="2.54" width="0.1524" layer="91"/>
-<label x="38.1" y="2.54" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="55.88" y1="2.54" x2="22.86" y2="2.54" width="0.1524" layer="91"/>
+<label x="20.32" y="2.54" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="22.86" y1="2.54" x2="20.32" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="2.54" x2="22.86" y2="-30.48" width="0.1524" layer="91"/>
+<junction x="22.86" y="2.54"/>
+<pinref part="U$1" gate="G$1" pin="16/A2/T"/>
+<wire x1="22.86" y1="-30.48" x2="55.88" y2="-30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -7470,12 +7475,12 @@ Source: www.kingbright.com</description>
 </segment>
 <segment>
 <pinref part="Y_AXIS" gate="G$1" pin="P$2"/>
-<wire x1="-7.62" y1="6.35" x2="15.24" y2="6.35" width="0.1524" layer="91"/>
+<wire x1="-7.62" y1="6.35" x2="12.7" y2="6.35" width="0.1524" layer="91"/>
 <pinref part="+3V9" gate="G$1" pin="+3V3"/>
 </segment>
 <segment>
 <pinref part="Z_AXIS" gate="G$1" pin="P$2"/>
-<wire x1="-7.62" y1="-24.13" x2="13.97" y2="-24.13" width="0.1524" layer="91"/>
+<wire x1="-7.62" y1="-24.13" x2="8.89" y2="-24.13" width="0.1524" layer="91"/>
 <pinref part="+3V8" gate="G$1" pin="+3V3"/>
 </segment>
 <segment>
@@ -7541,8 +7546,8 @@ Source: www.kingbright.com</description>
 <net name="ZSET" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="5/PWM"/>
-<wire x1="55.88" y1="-2.54" x2="38.1" y2="-2.54" width="0.1524" layer="91"/>
-<label x="38.1" y="-2.54" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="55.88" y1="-2.54" x2="48.26" y2="-2.54" width="0.1524" layer="91"/>
+<label x="48.26" y="-2.54" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="-71.12" y1="-40.64" x2="-50.8" y2="-40.64" width="0.1524" layer="91"/>
