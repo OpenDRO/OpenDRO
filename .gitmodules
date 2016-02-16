@@ -1,0 +1,3 @@
+[submodule "firmware/rev2/lib/FreqMeasureMulti"]
+	path = firmware/rev2/lib/FreqMeasureMulti
+	url = https://github.com/PaulStoffregen/FreqMeasureMulti
