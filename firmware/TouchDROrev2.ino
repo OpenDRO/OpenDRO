@@ -13,7 +13,9 @@
 #include <Bounce.h>
 #include <EEPROM.h>
 
-#DEFINE FREQ_PIN 3 //Reserved
+// Frequency measure reserved pins
+// For Teensy 3.x  3 & 4
+// For Teensy LC  16 & 17
 
 #DEFINE ZSET_PIN 5
 
@@ -21,10 +23,10 @@
 #DEFINE X_B_PIN 12
 #DEFINE Y_A_PIN 14
 #DEFINE Y_B_PIN 15
-#DEFINE Z_A_PIN 16
-#DEFINE Z_B_PIN 17
+#DEFINE Z_A_PIN 22
+#DEFINE Z_B_PIN 23
 
-#DEFINE BT_KEY 7
+#DEFINE BT_KEY 2
 
 #DEFINE DEVICE_NAME "TouchDRO"
 
@@ -37,7 +39,7 @@ Encoder encoderZ(Z_A_PIN, Z_B_PIN);
 Metro keepAlive = Metro(100);
 
 // Zero button (optional)
-Bounce zerobutton = Bounce(ZSET_PIN), 10);
+Bounce zerobutton = Bounce(ZSET_PIN, 10);
 
 void setup() {
   // initialize the console output
@@ -46,6 +48,7 @@ void setup() {
   // initialize the bluetooth output
   Serial1.begin(9600);
 
+  // set the bluetooth module name
   delay(250);
   pinMode(BT_KEY,OUTPUT);
   delay(250);
@@ -53,7 +56,7 @@ void setup() {
   delay(250);
   Serial1.print("AT+NAME"+DEVICE_NAME);
   delay(250);
-  digitalWrite(BT_KEY);
+  digitalWrite(BT_KEY, LOW);
 
   // initialize the frequency library (tach)
   FreqMeasure.begin();
