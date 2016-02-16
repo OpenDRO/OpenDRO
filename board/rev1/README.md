@@ -12,7 +12,7 @@
 - 1 x 240 Ω 1/4W Resistor
 - 1 x 390 Ω 1/4W Resistor
 - 1 x [DS-228 On/Off Switch][8] (or similar)***
-- 1 x Teensyduino LC (or Teensyduino 3.2)
+- 1 x Teensyduino 3.x
 - 3 x 6-pin [KF2510 male/female connectors & pins][1]\*
 - 1 x 4-pin [KF2510 male/female connector & pins][2]\*
 - 1 x 2-pin [KF2510 male/female connector & pins][2]\*,\*\*

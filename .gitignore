@@ -45,3 +45,4 @@ eagle.epf
 Thumbs.db
 .DS_Store
 ~$*
+.pioenvs
