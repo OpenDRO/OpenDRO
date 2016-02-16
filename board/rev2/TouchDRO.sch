@@ -7409,14 +7409,11 @@ Source: www.kingbright.com</description>
 <label x="17.78" y="86.36" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="3/CAN-TX/PWM"/>
-<wire x1="55.88" y1="2.54" x2="22.86" y2="2.54" width="0.1524" layer="91"/>
-<label x="20.32" y="2.54" size="1.778" layer="95" rot="R180" xref="yes"/>
-<wire x1="22.86" y1="2.54" x2="20.32" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="2.54" x2="22.86" y2="-30.48" width="0.1524" layer="91"/>
-<junction x="22.86" y="2.54"/>
-<pinref part="U$1" gate="G$1" pin="16/A2/T"/>
-<wire x1="22.86" y1="-30.48" x2="55.88" y2="-30.48" width="0.1524" layer="91"/>
+<label x="48.26" y="-7.62" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="48.26" y1="-7.62" x2="50.8" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="-7.62" x2="53.34" y2="-5.08" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="6/PWM"/>
+<wire x1="53.34" y1="-5.08" x2="55.88" y2="-5.08" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$6" class="0">
