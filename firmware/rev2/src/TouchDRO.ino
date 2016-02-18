@@ -10,6 +10,8 @@
 #include <Button.h>
 #include <EEPROM.h>
 
+#define DEVICE_NAME "TouchDRO Lathe"
+
 #define ZEROSET_PIN 5
 
 #define TACH_PIN 6
@@ -47,19 +49,19 @@ void setup() {
   Serial1.begin(9600);
 
   // set the bluetooth module name
-  delay(250);
-  pinMode(BT_KEY,OUTPUT);
-  delay(250);
-  digitalWrite(BT_KEY, HIGH);
-  delay(250);
-  Serial1.print("AT+NAMETouchDRO");
-  delay(250);
-  digitalWrite(BT_KEY, LOW);
+  // delay(250);
+  // pinMode(BT_KEY,OUTPUT);
+  // delay(250);
+  // digitalWrite(BT_KEY, HIGH);
+  // delay(250);
+  // String device_name = String("AT+NAME=") + String(DEVICE_NAME) + String("\r\n");
+  // Serial1.print(device_name);
+  // delay(250);
+  // digitalWrite(BT_KEY, LOW);
 
   // initialize the frequency library (tach)
   tach.begin(TACH_PIN);
 }
-
 
 // variables for current x, y & z positions
 long positionX = -999;
@@ -74,7 +76,7 @@ float frequency = 0;
 void loop() {
 
    zeroset.read();
-
+   
    if (tach.available()) {
     // average every 30 frequency samples
     rpm = rpm + tach.read();
@@ -86,7 +88,7 @@ void loop() {
     }
   }
 
- // zero-set the encoder values
+// zero-set the encoder values
 if (zeroset.wasPressed()) {
         encoderX.write(0);
         encoderY.write(0);
@@ -114,12 +116,15 @@ if (zeroset.wasPressed()) {
         Serial1.print(F("y")); Serial1.print((long)positionY); Serial1.print(F(";"));
         Serial1.print(F("z")); Serial1.print((long)positionZ); Serial1.print(F(";"));
 
-        // uncomment to debug via console
-        //Serial.print(F("x")); Serial.print((long)positionX); Serial.print(F(";"));
-        //Serial.print(F("y")); Serial.print((long)positionY); Serial.print(F(";"));
-
         // send current tach reading to TouchDRO app via bluetooth serial interface
         Serial1.print(F("t")); Serial1.print((long)frequency); Serial1.print(F(";"));
+
+
+        // uncomment to debug via console
+        // Serial.print(F("x")); Serial.print((long)positionX); Serial.print(F(";"));
+        // Serial.print(F("y")); Serial.print((long)positionY); Serial.print(F(";"));
+        // Serial.print(F("z")); Serial.print((long)positionZ); Serial.print(F(";"));
+        // Serial.print(F("t")); Serial.print((long)frequency); Serial.print(F(";"));
 
         // reset the periodic interupt
         keepAlive.reset();
