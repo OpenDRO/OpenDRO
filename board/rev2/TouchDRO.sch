@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -150,8 +150,8 @@
 <wire x1="-1.27" y1="1.27" x2="8.89" y2="1.27" width="0.127" layer="21"/>
 <wire x1="8.89" y1="1.27" x2="8.89" y2="12.7" width="0.127" layer="21"/>
 <wire x1="8.89" y1="12.7" x2="-1.27" y2="12.7" width="0.127" layer="21"/>
-<circle x="0" y="2.54" radius="0.898025" width="0.127" layer="21"/>
-<text x="1.27" y="1.905" size="1.27" layer="21">&gt;NAME</text>
+<circle x="0" y="2.54" radius="0.898025" width="0.127" layer="25"/>
+<text x="1.27" y="1.905" size="1.27" layer="25">&gt;NAME</text>
 </package>
 <package name="KF2510_6PIN">
 <pad name="P$1" x="0" y="0" drill="0.9"/>
@@ -165,8 +165,8 @@
 <wire x1="-1.27" y1="12.7" x2="13.97" y2="12.7" width="0.127" layer="21"/>
 <wire x1="13.97" y1="1.27" x2="-1.27" y2="1.27" width="0.127" layer="21"/>
 <wire x1="13.97" y1="12.7" x2="13.97" y2="1.27" width="0.127" layer="21"/>
-<circle x="0" y="2.54" radius="0.898025" width="0.127" layer="21"/>
-<text x="1.905" y="1.905" size="1.27" layer="21">&gt;NAME</text>
+<circle x="0" y="2.54" radius="0.898025" width="0.127" layer="25"/>
+<text x="1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
@@ -5417,6 +5417,7 @@ Source: http://www2.produktinfo.conrad.com/datenblaetter/700000-724999/705152-da
 <pad name="GND" x="-2.54" y="0" drill="1" diameter="1.8796" shape="square"/>
 <pad name="OUT" x="0" y="0" drill="1" diameter="1.8796"/>
 <pad name="IN" x="2.54" y="0" drill="1" diameter="1.8796"/>
+<text x="-3.81" y="-1.27" size="0.4064" layer="25" rot="R90">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
@@ -7085,8 +7086,8 @@ Source: www.kingbright.com</description>
 <part name="R10" library="SparkFun-Passives" deviceset="RESISTOR" device="EZ" value="10KΩ"/>
 <part name="ZEROSET" library="Switches" deviceset="DS-227" device=""/>
 <part name="ONOFF" library="Switches" deviceset="DS-228" device=""/>
-<part name="U2" library="regulators" deviceset="VREG_33" device=""/>
-<part name="U3" library="regulators" deviceset="VREG_5" device=""/>
+<part name="VREG33" library="regulators" deviceset="VREG_33" device="" value="VREG_33"/>
+<part name="VREG50" library="regulators" deviceset="VREG_5" device="" value="VREG_5"/>
 <part name="PWRLED" library="led" deviceset="LED" device="3MM"/>
 <part name="SUPPLY4" library="supply2" deviceset="GND" device=""/>
 <part name="+3V7" library="supply1" deviceset="+3V3" device=""/>
@@ -7188,8 +7189,8 @@ Source: www.kingbright.com</description>
 <instance part="R10" gate="G$1" x="-13.97" y="2.54" rot="R90"/>
 <instance part="ZEROSET" gate="G$1" x="-184.15" y="-11.43"/>
 <instance part="ONOFF" gate="G$1" x="-153.67" y="54.61" rot="R270"/>
-<instance part="U2" gate="G$1" x="-105.41" y="77.47"/>
-<instance part="U3" gate="G$1" x="-105.41" y="52.07"/>
+<instance part="VREG33" gate="G$1" x="-105.41" y="77.47"/>
+<instance part="VREG50" gate="G$1" x="-105.41" y="52.07"/>
 <instance part="PWRLED" gate="G$1" x="-168.91" y="-8.89"/>
 <instance part="SUPPLY4" gate="GND" x="-168.91" y="-26.67"/>
 <instance part="+3V7" gate="G$1" x="-168.91" y="19.05"/>
@@ -7268,12 +7269,12 @@ Source: www.kingbright.com</description>
 <segment>
 <pinref part="SUPPLY15" gate="GND" pin="GND"/>
 <wire x1="-105.41" y1="69.85" x2="-105.41" y2="64.77" width="0.1524" layer="91"/>
-<pinref part="U2" gate="G$1" pin="GND"/>
+<pinref part="VREG33" gate="G$1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="SUPPLY18" gate="GND" pin="GND"/>
 <wire x1="-105.41" y1="39.37" x2="-105.41" y2="44.45" width="0.1524" layer="91"/>
-<pinref part="U3" gate="G$1" pin="GND"/>
+<pinref part="VREG50" gate="G$1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="SUPPLY3" gate="GND" pin="GND"/>
@@ -7488,7 +7489,7 @@ Source: www.kingbright.com</description>
 <pinref part="C4" gate="G$1" pin="1"/>
 <wire x1="-74.93" y1="52.07" x2="-67.31" y2="52.07" width="0.1524" layer="91"/>
 <wire x1="-87.63" y1="52.07" x2="-87.63" y2="46.99" width="0.1524" layer="91"/>
-<pinref part="U3" gate="G$1" pin="OUT"/>
+<pinref part="VREG50" gate="G$1" pin="OUT"/>
 <pinref part="C5" gate="G$1" pin="1"/>
 <wire x1="-74.93" y1="46.99" x2="-74.93" y2="52.07" width="0.1524" layer="91"/>
 <junction x="-74.93" y="52.07"/>
@@ -7518,7 +7519,7 @@ Source: www.kingbright.com</description>
 <pinref part="C2" gate="G$1" pin="1"/>
 <wire x1="-74.93" y1="77.47" x2="-67.31" y2="77.47" width="0.1524" layer="91"/>
 <wire x1="-87.63" y1="77.47" x2="-87.63" y2="72.39" width="0.1524" layer="91"/>
-<pinref part="U2" gate="G$1" pin="OUT"/>
+<pinref part="VREG33" gate="G$1" pin="OUT"/>
 <pinref part="C3" gate="G$1" pin="1"/>
 <wire x1="-74.93" y1="72.39" x2="-74.93" y2="77.47" width="0.1524" layer="91"/>
 <junction x="-74.93" y="77.47"/>
@@ -7585,8 +7586,8 @@ Source: www.kingbright.com</description>
 <pinref part="D3" gate="G$1" pin="C"/>
 <wire x1="-123.19" y1="52.07" x2="-113.03" y2="52.07" width="0.1524" layer="91"/>
 <junction x="-113.03" y="52.07"/>
-<pinref part="U2" gate="G$1" pin="IN"/>
-<pinref part="U3" gate="G$1" pin="IN"/>
+<pinref part="VREG33" gate="G$1" pin="IN"/>
+<pinref part="VREG50" gate="G$1" pin="IN"/>
 </segment>
 </net>
 <net name="ZSET" class="0">

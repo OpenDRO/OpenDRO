@@ -67,8 +67,8 @@
 <wire x1="-1.27" y1="1.27" x2="8.89" y2="1.27" width="0.127" layer="21"/>
 <wire x1="8.89" y1="1.27" x2="8.89" y2="12.7" width="0.127" layer="21"/>
 <wire x1="8.89" y1="12.7" x2="-1.27" y2="12.7" width="0.127" layer="21"/>
-<circle x="0" y="2.54" radius="0.898025" width="0.127" layer="21"/>
-<text x="1.27" y="1.905" size="1.27" layer="21">&gt;NAME</text>
+<circle x="0" y="2.54" radius="0.898025" width="0.127" layer="25"/>
+<text x="1.27" y="1.905" size="1.27" layer="25">&gt;NAME</text>
 </package>
 <package name="KF2510_6PIN">
 <pad name="P$1" x="0" y="0" drill="0.9"/>
@@ -82,8 +82,8 @@
 <wire x1="-1.27" y1="12.7" x2="13.97" y2="12.7" width="0.127" layer="21"/>
 <wire x1="13.97" y1="1.27" x2="-1.27" y2="1.27" width="0.127" layer="21"/>
 <wire x1="13.97" y1="12.7" x2="13.97" y2="1.27" width="0.127" layer="21"/>
-<circle x="0" y="2.54" radius="0.898025" width="0.127" layer="21"/>
-<text x="1.905" y="1.905" size="1.27" layer="21">&gt;NAME</text>
+<circle x="0" y="2.54" radius="0.898025" width="0.127" layer="25"/>
+<text x="1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
 </package>
 <package name="KF2510_2PIN">
 <pad name="P$1" x="-3.81" y="-6.35" drill="0.9"/>
