@@ -2,30 +2,30 @@
 
 ## Bill of Materials
 
-- 3 x [CUI AMT-102][3] or [Sherline 8220/8225][4]
-- 3 x [WMD2903 Molex connectors][12] (AMT-102 only)
-- 15 x [WM2510CT Molex Pins][14] (AMT-102 only)
+- 3 (mill) or 2 (lathe) x [CUI AMT-102][3] or [Sherline 8220/8225][4]
+- 3 (mill) or 2 (lathe) x [WMD2903 Molex connectors][12] (AMT-102 only)
+- 15 (mill) or 10 (lathe) x [WM2510CT Molex Pins][14] (AMT-102 only)
+- 1 x [PCB barrel jack][16]
+- 1 x 1N4001 Diode
 - 1 x 3.3V Regulator ([LM11117][5] or similar, minimum 750 mA)
 - 1 x 5.0V Regulator  ([MIC29300][6] or [LD1085V50][7] or similar, minimum 3A)
-- 1 x 100 µF Capacitor
-- 2 x 10 µF Capacitors
-- 6 x 10 KΩ 1/4W Resistors (Sherline 8220/8225 encoders only)
+- 1 x 100 µF capacitor
+- 2 x 10 µF capacitors
+- 2 x 0.1 µF capacitors
+- 6 x 10 KΩ 1/4W Resistors
+- 3 x 100 Ω 1/4W resistors
 - 1 x LED
 - 1 x 1.1 KΩ Resistor
 - 1 x [DS-228 On/Off Switch][8] (or similar)***
 - 1 x [DS-227 Momentary Switch][9] (or similar)***
 - 1 x Teensyduino LC (or Teensyduino 3.2)
-- 3 x 6-pin [KF2510 male/female connectors & pins][1]*
+- 3 (mill) or 2 (lathe) x 6-pin [KF2510 male/female connectors & pins][1]*
 - 1 x 4-pin [KF2510 male/female connector & pins][2]*
-- 1 x 1N4001 Diode
 - 1 x [HC-05 Serial Bluetooth Module][10]
 - 1 x [USB Type-A PCB Socket][11]
-- 1 x [TCRT5000 Reflective PhotoelectricSwitch][15]
+- 1 x [TCRT5000 Reflective Photoelectric Switch][15]
 
 \* Wires can be soldered directly to board in lieu of connectors
-
-
-
 
 
 [1]: http://www.ebay.com/itm/KF2510-2P-10P-2-54mm-Straight-Right-Angle-Connector-Header-Terminal-Housing-/271932487017?var=&hash=item3f50707569
@@ -42,3 +42,4 @@
 [12]: http://www.digikey.com/product-detail/en/0050579405/WM2903-ND/115035
 [14]:http://www.digikey.com/product-detail/en/0016020086/WM2510CT-ND/467802
 [15]: http://www.ebay.com/itm/10pcs-TCRT5000-Infrared-Reflective-Photoelectric-Switch-IR-Track-Barrier-Line-/331412239426?hash=item4d29b57442
+[16]: http://www.ebay.com/itm/10x-Connector-5-5x2-5mm-Female-DC-Power-Supply-3-Pin-Barrel-Type-PCB-Panel-Mount-/111768191333
