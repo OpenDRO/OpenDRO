@@ -1,0 +1,13 @@
+﻿"Symbol";"Value";"Unit";
+"TraceParts.PartNumber";"60-13102015-102841";"";
+"REFERENCE";"AMT102-V";"";
+"TraceParts.PartTitle";"AMT10-V Kit - 28 mm, 48 ~ 2048 PPR, Incremental, Capacitive Modular Encoder Kit";"";
+"TraceParts.InstanceId";"60-13102015-1028413VZJG7NI3RU3ACAAUHXZ2KDW0";"";
+"DESIGN";"Straight (Radial) Orientation";"";
+"TraceParts.PartStatus";"Published";"";
+"TraceParts.PartStatusId";"";"";
+"SUPPLIER";"CUI";"";
+"TraceParts.PartVersion";"1.0.3";"";
+"TRACEPARTS";"TRACEPARTS";"";
+"TraceParts.PartLanguage";"en";"";
+"TraceParts.ClassPath";"CUI:60-13102015-102841";"";
